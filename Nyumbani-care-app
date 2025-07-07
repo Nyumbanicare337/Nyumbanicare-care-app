@@ -1,6 +1,7 @@
-git init 
-git add
-git commit-m"Initial commit for Nyumbanicare"
-git remote add origin https://github.com/nyumbanicare3/nyumbani-care-app.git
-git branch -M main
-git push -u origin main
+import {genkit} from 'genkit';
+import {googleAI} from '@genkit-ai/googleai';
+
+export const ai = genkit({
+  plugins: [googleAI()],
+  model: 'googleai/gemini-2.0-flash',
+});
