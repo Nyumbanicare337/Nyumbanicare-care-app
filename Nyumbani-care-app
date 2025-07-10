@@ -1,7 +1,25 @@
-import {genkit} from 'genkit';
-import {googleAI} from '@genkit-ai/googleai';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-export const ai = genkit({
-  plugins: [googleAI()],
-  model: 'googleai/gemini-2.0-flash',
-});
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
+    /* ... (maelezo mengine yote ya rangi) ... */
+  }
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    /* ... (maelezo mengine yote ya rangi kwa dark mode) ... */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
